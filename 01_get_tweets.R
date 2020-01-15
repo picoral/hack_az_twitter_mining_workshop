@@ -87,7 +87,7 @@ iran_tweets_az <- search_tweets('iran', type = "recent", n = 5000, lang='en',
                                 include_rts = FALSE)
 nrow(iran_tweets_az)
 
-# remove urls from text
+# remove urls from text and other things like @ and #
 iran_tweets_az$clean_text <- gsub("http.*","",  iran_tweets_az$text)
 iran_tweets_az$clean_text <- gsub("@\\w+","",  iran_tweets_az$clean_text)
 iran_tweets_az$clean_text <- gsub("#\\w+","",  iran_tweets_az$clean_text)
